@@ -1,0 +1,12 @@
+Before you start
+Make sure you have OpenJDK 11 or newer installed.
+
+Download Keycloak
+First step is to download and extract keycloak-17.0.1.zip from the Keycloak website.
+
+After extracting you should have a directory named keycloak-17.0.1.
+
+Start Keycloak
+From a terminal open the directory keycloak-17.0.1, then to start Keycloak run the following command.
+
+bin/kc.bat start-dev --http-port=8180
