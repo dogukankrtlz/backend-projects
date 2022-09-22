@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+
+
+import   "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.dk.grpcmovie.user";
+
+
+message UserSearchRequest{
+  int32 login_id = 1;
+}
+
+message UserResponse {
+  int32 login_id = 1;
+  string name = 2;
+  common.Genre genre = 3;
+}
+
+message UserGenreUpdateRequest{
+  int32 login_id = 1;
+  common.Genre genre = 2;
+}
+message SaveUserRequest{
+  int32 login_id = 1;
+  string name = 2;
+  common.Genre genre = 3;
+
+}
+
+
+message GetUserResponse {
+  oneof user_response {
+    UserResponse user = 1;
+    common.Status status = 2;
+  }
+}
+
+service UserService {
+  rpc getUserGenre(UserSearchRequest) returns (GetUserResponse);
+  rpc updateUserGenre(UserGenreUpdateRequest) returns (GetUserResponse);
+  rpc saveUser(SaveUserRequest) returns (GetUserResponse);
+
+}

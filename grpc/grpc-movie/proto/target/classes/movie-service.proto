@@ -1,0 +1,43 @@
+syntax = "proto3";
+import   "common/common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.dk.grpcmovie.movie";
+
+
+message MovieDto{
+  int32 id = 1;
+  string title = 2;
+  int32 rel_year = 3;
+  double rating = 4;
+  common.Genre genre = 5;
+}
+
+message MovieSearchRequest{
+  common.Genre genre = 1;
+}
+
+
+message SaveMovieRequest {
+  int32 id = 1;
+  string title = 2;
+  int32 rel_year = 3;
+  double rating = 4;
+  common.Genre genre = 5;
+}
+message AllMovieResponse {
+  repeated MovieDto movie = 1;
+}
+message GetMovieResponse {
+  oneof movie_response {
+    MovieDto movie = 1;
+    common.Status status = 2;
+  }
+}
+
+
+service MovieService{
+  rpc getMovies(MovieSearchRequest) returns (AllMovieResponse);
+  rpc saveMovie(SaveMovieRequest) returns (GetMovieResponse);
+
+}
