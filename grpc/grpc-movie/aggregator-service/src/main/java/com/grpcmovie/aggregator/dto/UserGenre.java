@@ -9,10 +9,21 @@ import lombok.NoArgsConstructor;
 public class UserGenre {
     private int loginId;
     private String genre;
+    private String name;
 
-    public UserGenre(int loginId, String genre) {
+    public UserGenre(int loginId, String genre , String name) {
         this.loginId = loginId;
         this.genre = genre;
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public UserGenre() {

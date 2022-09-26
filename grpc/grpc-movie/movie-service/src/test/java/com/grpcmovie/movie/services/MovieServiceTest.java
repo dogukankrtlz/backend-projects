@@ -81,6 +81,10 @@ public class MovieServiceTest {
         GetMovieResponse reply =
                 blockingStub.saveMovie(SaveMovieRequest.newBuilder().setId(1).setTitle("Movie 1").setRating(7.7).setRelYear(2020).setGenre(Genre.CRIME).build());
 
+        blockingStub.saveMovie(SaveMovieRequest.newBuilder().setId(1).setTitle("Movie 1").setRating(7.7).setRelYear(2020).setGenre(Genre.CRIME).build());
+
+
+
         assertEquals(1, reply.getMovie().getId());
         assertEquals("Movie 1", reply.getMovie().getTitle());
         assertEquals(7.7, reply.getMovie().getRating(),0.0);
@@ -91,5 +95,6 @@ public class MovieServiceTest {
 
 
     }
+
 
 }

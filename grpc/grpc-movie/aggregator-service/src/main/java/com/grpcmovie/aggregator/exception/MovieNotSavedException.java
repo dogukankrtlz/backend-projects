@@ -1,13 +1,13 @@
 package com.grpcmovie.aggregator.exception;
 
 
-public class BadGenreUpdateRequestException extends RuntimeException{
+public class MovieNotSavedException extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private final String message;
 
-    public BadGenreUpdateRequestException() {
+    public MovieNotSavedException(String message) {
 
-        this.message = "Bad Update Genre Request";
+        this.message = String.format("gRPC Response: {%s}", message);
         //this.message = message;
     }
 
