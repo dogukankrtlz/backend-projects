@@ -6,7 +6,7 @@ package com.dk.grpcmovie.user;
 /**
  * Protobuf type {@code GetUserResponse}
  */
-public class GetUserResponse extends
+public final class GetUserResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:GetUserResponse)
     GetUserResponseOrBuilder {
@@ -15,7 +15,7 @@ private static final long serialVersionUID = 0L;
   private GetUserResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  public GetUserResponse() {
+  private GetUserResponse() {
   }
 
   @java.lang.Override

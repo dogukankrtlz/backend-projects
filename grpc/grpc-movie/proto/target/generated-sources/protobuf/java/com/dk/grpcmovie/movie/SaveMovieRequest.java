@@ -18,6 +18,8 @@ private static final long serialVersionUID = 0L;
   private SaveMovieRequest() {
     title_ = "";
     genre_ = 0;
+    imageUrl_ = "";
+    summary_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +77,18 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             genre_ = rawValue;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            imageUrl_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            summary_ = s;
             break;
           }
           default: {
@@ -199,6 +213,82 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.dk.grpcmovie.common.Genre.UNRECOGNIZED : result;
   }
 
+  public static final int IMAGE_URL_FIELD_NUMBER = 6;
+  private volatile java.lang.Object imageUrl_;
+  /**
+   * <code>string image_url = 6;</code>
+   * @return The imageUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getImageUrl() {
+    java.lang.Object ref = imageUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imageUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string image_url = 6;</code>
+   * @return The bytes for imageUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getImageUrlBytes() {
+    java.lang.Object ref = imageUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      imageUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUMMARY_FIELD_NUMBER = 7;
+  private volatile java.lang.Object summary_;
+  /**
+   * <code>string summary = 7;</code>
+   * @return The summary.
+   */
+  @java.lang.Override
+  public java.lang.String getSummary() {
+    java.lang.Object ref = summary_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      summary_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string summary = 7;</code>
+   * @return The bytes for summary.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSummaryBytes() {
+    java.lang.Object ref = summary_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      summary_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -228,6 +318,12 @@ private static final long serialVersionUID = 0L;
     if (genre_ != com.dk.grpcmovie.common.Genre.DRAMA.getNumber()) {
       output.writeEnum(5, genre_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, imageUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, summary_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +352,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, genre_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(imageUrl_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, imageUrl_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, summary_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -281,6 +383,10 @@ private static final long serialVersionUID = 0L;
         != java.lang.Double.doubleToLongBits(
             other.getRating())) return false;
     if (genre_ != other.genre_) return false;
+    if (!getImageUrl()
+        .equals(other.getImageUrl())) return false;
+    if (!getSummary()
+        .equals(other.getSummary())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -303,6 +409,10 @@ private static final long serialVersionUID = 0L;
         java.lang.Double.doubleToLongBits(getRating()));
     hash = (37 * hash) + GENRE_FIELD_NUMBER;
     hash = (53 * hash) + genre_;
+    hash = (37 * hash) + IMAGE_URL_FIELD_NUMBER;
+    hash = (53 * hash) + getImageUrl().hashCode();
+    hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+    hash = (53 * hash) + getSummary().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,6 +556,10 @@ private static final long serialVersionUID = 0L;
 
       genre_ = 0;
 
+      imageUrl_ = "";
+
+      summary_ = "";
+
       return this;
     }
 
@@ -477,6 +591,8 @@ private static final long serialVersionUID = 0L;
       result.relYear_ = relYear_;
       result.rating_ = rating_;
       result.genre_ = genre_;
+      result.imageUrl_ = imageUrl_;
+      result.summary_ = summary_;
       onBuilt();
       return result;
     }
@@ -540,6 +656,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.genre_ != 0) {
         setGenreValue(other.getGenreValue());
+      }
+      if (!other.getImageUrl().isEmpty()) {
+        imageUrl_ = other.imageUrl_;
+        onChanged();
+      }
+      if (!other.getSummary().isEmpty()) {
+        summary_ = other.summary_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -789,6 +913,158 @@ private static final long serialVersionUID = 0L;
     public Builder clearGenre() {
       
       genre_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object imageUrl_ = "";
+    /**
+     * <code>string image_url = 6;</code>
+     * @return The imageUrl.
+     */
+    public java.lang.String getImageUrl() {
+      java.lang.Object ref = imageUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imageUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string image_url = 6;</code>
+     * @return The bytes for imageUrl.
+     */
+    public com.google.protobuf.ByteString
+        getImageUrlBytes() {
+      java.lang.Object ref = imageUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imageUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string image_url = 6;</code>
+     * @param value The imageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      imageUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string image_url = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearImageUrl() {
+      
+      imageUrl_ = getDefaultInstance().getImageUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string image_url = 6;</code>
+     * @param value The bytes for imageUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImageUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      imageUrl_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object summary_ = "";
+    /**
+     * <code>string summary = 7;</code>
+     * @return The summary.
+     */
+    public java.lang.String getSummary() {
+      java.lang.Object ref = summary_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        summary_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string summary = 7;</code>
+     * @return The bytes for summary.
+     */
+    public com.google.protobuf.ByteString
+        getSummaryBytes() {
+      java.lang.Object ref = summary_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        summary_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string summary = 7;</code>
+     * @param value The summary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSummary(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      summary_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string summary = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSummary() {
+      
+      summary_ = getDefaultInstance().getSummary();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string summary = 7;</code>
+     * @param value The bytes for summary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSummaryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      summary_ = value;
       onChanged();
       return this;
     }

@@ -15,7 +15,7 @@ private static final long serialVersionUID = 0L;
   private UserResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  public UserResponse() {
+  private UserResponse() {
     name_ = "";
     genre_ = 0;
   }

@@ -5,18 +5,22 @@ option java_multiple_files = true;
 option java_package = "com.dk.grpcmovie.movie";
 
 
-message MovieDto{
+message MovieDto {
   int32 id = 1;
   string title = 2;
   int32 rel_year = 3;
   double rating = 4;
   common.Genre genre = 5;
+  string image_url = 6;
+  string summary = 7;
 }
 
-message MovieSearchRequest{
+message MovieSearchRequest {
   common.Genre genre = 1;
 }
 
+message Empty {
+}
 
 message SaveMovieRequest {
   int32 id = 1;
@@ -24,6 +28,8 @@ message SaveMovieRequest {
   int32 rel_year = 3;
   double rating = 4;
   common.Genre genre = 5;
+  string image_url = 6;
+  string summary = 7;
 }
 message AllMovieResponse {
   repeated MovieDto movie = 1;
@@ -34,10 +40,73 @@ message GetMovieResponse {
     common.Status status = 2;
   }
 }
+message GetFavResponse {
+  oneof movie_response {
+    FavoriteDto favorite = 1;
+    common.Status status = 2;
+  }
+}
+message FavoriteDto {
+  int32 id = 1;
+  int32 userId = 2;
+  int32 movieId = 3;
+}
+message FavSearchRequest {
+  int32 userId = 1;
+}
+message AllFavResponse {
+  repeated FavoriteDto favori = 1;
+}
+message FavSaveRequest {
+  int32 id = 1;
+  int32 userId = 2;
+  int32 movieId = 3;
+}
+message FavDeleteRequest {
+  int32 id = 1;
+}
+message FavMovieDeleteRequest {
+  int32 userId = 1;
+  int32 movieId = 2;
 
-
+}
+message SingleFavSearchRequest {
+  int32 userId = 1;
+  int32 movieId = 2;
+}
+message CommentResponse {
+  common.Status status = 1;
+}
+message Comment {
+  int32 userId = 1;
+  int32 movieId = 2;
+  string message = 3;
+  string date = 4;
+}
+message AddCommentRequest {
+  int32 userId = 1;
+  int32 movieId = 2;
+  string message = 3;
+  string date = 4;
+}
+message AllCommentResponse {
+  repeated Comment comment = 1;
+}
+message GetCommentsRequest {
+  int32 movieId = 1;
+}
 service MovieService{
   rpc getMovies(MovieSearchRequest) returns (AllMovieResponse);
+  rpc getAllMovies(Empty) returns (AllMovieResponse);
   rpc saveMovie(SaveMovieRequest) returns (GetMovieResponse);
-
+  rpc getAllFavorite(FavSearchRequest) returns (AllFavResponse);
+  rpc saveFavorite(FavSaveRequest) returns (GetFavResponse);
+  rpc deleteFavorite(FavDeleteRequest) returns (GetFavResponse);
+  rpc getALLFavMovies(FavSearchRequest) returns (AllMovieResponse);
+  rpc getFavMovie(SingleFavSearchRequest) returns(GetFavResponse);
+  rpc deleteFavMovie(FavMovieDeleteRequest) returns (GetFavResponse);
+  rpc addComment(AddCommentRequest) returns(CommentResponse);
+  rpc getCommentsForMovie(GetCommentsRequest) returns(AllCommentResponse);
+ //rpc deleteComment() returns(CommentResponse);
+ // rpc updateComment() returns(CommentResponse);
 }

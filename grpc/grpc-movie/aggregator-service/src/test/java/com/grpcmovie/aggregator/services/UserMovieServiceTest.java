@@ -132,7 +132,7 @@ public class UserMovieServiceTest {
         RecommendedMovie recommendedMovie = new RecommendedMovie();
         recommendedMovie.setId(10);
         recommendedMovie.setTitle("2022 Movie Title");
-        recommendedMovie.setYear(2022);
+        recommendedMovie.setRel_year(2022);
         recommendedMovie.setRating(7.7);
         recommendedMovie.setGenre("DRAMA");
 

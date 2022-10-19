@@ -47,4 +47,28 @@ public interface MovieDtoOrBuilder extends
    * @return The genre.
    */
   com.dk.grpcmovie.common.Genre getGenre();
+
+  /**
+   * <code>string image_url = 6;</code>
+   * @return The imageUrl.
+   */
+  java.lang.String getImageUrl();
+  /**
+   * <code>string image_url = 6;</code>
+   * @return The bytes for imageUrl.
+   */
+  com.google.protobuf.ByteString
+      getImageUrlBytes();
+
+  /**
+   * <code>string summary = 7;</code>
+   * @return The summary.
+   */
+  java.lang.String getSummary();
+  /**
+   * <code>string summary = 7;</code>
+   * @return The bytes for summary.
+   */
+  com.google.protobuf.ByteString
+      getSummaryBytes();
 }

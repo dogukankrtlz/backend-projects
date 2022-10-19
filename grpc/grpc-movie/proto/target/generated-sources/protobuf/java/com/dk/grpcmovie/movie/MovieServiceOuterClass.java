@@ -25,6 +25,11 @@ public final class MovieServiceOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MovieSearchRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Empty_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Empty_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SaveMovieRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -39,6 +44,71 @@ public final class MovieServiceOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetMovieResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetFavResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetFavResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavoriteDto_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavoriteDto_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavSearchRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavSearchRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AllFavResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AllFavResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavSaveRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavSaveRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavDeleteRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavDeleteRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavMovieDeleteRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavMovieDeleteRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SingleFavSearchRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SingleFavSearchRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CommentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CommentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Comment_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Comment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddCommentRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AllCommentResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AllCommentResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetCommentsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetCommentsRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -49,21 +119,54 @@ public final class MovieServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023movie-service.proto\032\023common/common.pro" +
-      "to\"e\n\010MovieDto\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(" +
-      "\t\022\020\n\010rel_year\030\003 \001(\005\022\016\n\006rating\030\004 \001(\001\022\034\n\005g" +
-      "enre\030\005 \001(\0162\r.common.Genre\"2\n\022MovieSearch" +
-      "Request\022\034\n\005genre\030\001 \001(\0162\r.common.Genre\"m\n" +
-      "\020SaveMovieRequest\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002" +
-      " \001(\t\022\020\n\010rel_year\030\003 \001(\005\022\016\n\006rating\030\004 \001(\001\022\034" +
-      "\n\005genre\030\005 \001(\0162\r.common.Genre\",\n\020AllMovie" +
-      "Response\022\030\n\005movie\030\001 \003(\0132\t.MovieDto\"b\n\020Ge" +
-      "tMovieResponse\022\032\n\005movie\030\001 \001(\0132\t.MovieDto" +
-      "H\000\022 \n\006status\030\002 \001(\0132\016.common.StatusH\000B\020\n\016" +
-      "movie_response2v\n\014MovieService\0223\n\tgetMov" +
-      "ies\022\023.MovieSearchRequest\032\021.AllMovieRespo" +
-      "nse\0221\n\tsaveMovie\022\021.SaveMovieRequest\032\021.Ge" +
-      "tMovieResponseB\032\n\026com.dk.grpcmovie.movie" +
-      "P\001b\006proto3"
+      "to\"\211\001\n\010MovieDto\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001" +
+      "(\t\022\020\n\010rel_year\030\003 \001(\005\022\016\n\006rating\030\004 \001(\001\022\034\n\005" +
+      "genre\030\005 \001(\0162\r.common.Genre\022\021\n\timage_url\030" +
+      "\006 \001(\t\022\017\n\007summary\030\007 \001(\t\"2\n\022MovieSearchReq" +
+      "uest\022\034\n\005genre\030\001 \001(\0162\r.common.Genre\"\007\n\005Em" +
+      "pty\"\221\001\n\020SaveMovieRequest\022\n\n\002id\030\001 \001(\005\022\r\n\005" +
+      "title\030\002 \001(\t\022\020\n\010rel_year\030\003 \001(\005\022\016\n\006rating\030" +
+      "\004 \001(\001\022\034\n\005genre\030\005 \001(\0162\r.common.Genre\022\021\n\ti" +
+      "mage_url\030\006 \001(\t\022\017\n\007summary\030\007 \001(\t\",\n\020AllMo" +
+      "vieResponse\022\030\n\005movie\030\001 \003(\0132\t.MovieDto\"b\n" +
+      "\020GetMovieResponse\022\032\n\005movie\030\001 \001(\0132\t.Movie" +
+      "DtoH\000\022 \n\006status\030\002 \001(\0132\016.common.StatusH\000B" +
+      "\020\n\016movie_response\"f\n\016GetFavResponse\022 \n\010f" +
+      "avorite\030\001 \001(\0132\014.FavoriteDtoH\000\022 \n\006status\030" +
+      "\002 \001(\0132\016.common.StatusH\000B\020\n\016movie_respons" +
+      "e\":\n\013FavoriteDto\022\n\n\002id\030\001 \001(\005\022\016\n\006userId\030\002" +
+      " \001(\005\022\017\n\007movieId\030\003 \001(\005\"\"\n\020FavSearchReques" +
+      "t\022\016\n\006userId\030\001 \001(\005\".\n\016AllFavResponse\022\034\n\006f" +
+      "avori\030\001 \003(\0132\014.FavoriteDto\"=\n\016FavSaveRequ" +
+      "est\022\n\n\002id\030\001 \001(\005\022\016\n\006userId\030\002 \001(\005\022\017\n\007movie" +
+      "Id\030\003 \001(\005\"\036\n\020FavDeleteRequest\022\n\n\002id\030\001 \001(\005" +
+      "\"8\n\025FavMovieDeleteRequest\022\016\n\006userId\030\001 \001(" +
+      "\005\022\017\n\007movieId\030\002 \001(\005\"9\n\026SingleFavSearchReq" +
+      "uest\022\016\n\006userId\030\001 \001(\005\022\017\n\007movieId\030\002 \001(\005\"1\n" +
+      "\017CommentResponse\022\036\n\006status\030\001 \001(\0132\016.commo" +
+      "n.Status\"I\n\007Comment\022\016\n\006userId\030\001 \001(\005\022\017\n\007m" +
+      "ovieId\030\002 \001(\005\022\017\n\007message\030\003 \001(\t\022\014\n\004date\030\004 " +
+      "\001(\t\"S\n\021AddCommentRequest\022\016\n\006userId\030\001 \001(\005" +
+      "\022\017\n\007movieId\030\002 \001(\005\022\017\n\007message\030\003 \001(\t\022\014\n\004da" +
+      "te\030\004 \001(\t\"/\n\022AllCommentResponse\022\031\n\007commen" +
+      "t\030\001 \003(\0132\010.Comment\"%\n\022GetCommentsRequest\022" +
+      "\017\n\007movieId\030\001 \001(\0052\341\004\n\014MovieService\0223\n\tget" +
+      "Movies\022\023.MovieSearchRequest\032\021.AllMovieRe" +
+      "sponse\022)\n\014getAllMovies\022\006.Empty\032\021.AllMovi" +
+      "eResponse\0221\n\tsaveMovie\022\021.SaveMovieReques" +
+      "t\032\021.GetMovieResponse\0224\n\016getAllFavorite\022\021" +
+      ".FavSearchRequest\032\017.AllFavResponse\0220\n\014sa" +
+      "veFavorite\022\017.FavSaveRequest\032\017.GetFavResp" +
+      "onse\0224\n\016deleteFavorite\022\021.FavDeleteReques" +
+      "t\032\017.GetFavResponse\0227\n\017getALLFavMovies\022\021." +
+      "FavSearchRequest\032\021.AllMovieResponse\0227\n\013g" +
+      "etFavMovie\022\027.SingleFavSearchRequest\032\017.Ge" +
+      "tFavResponse\0229\n\016deleteFavMovie\022\026.FavMovi" +
+      "eDeleteRequest\032\017.GetFavResponse\0222\n\naddCo" +
+      "mment\022\022.AddCommentRequest\032\020.CommentRespo" +
+      "nse\022?\n\023getCommentsForMovie\022\023.GetComments" +
+      "Request\032\023.AllCommentResponseB\032\n\026com.dk.g" +
+      "rpcmovie.movieP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -75,31 +178,115 @@ public final class MovieServiceOuterClass {
     internal_static_MovieDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MovieDto_descriptor,
-        new java.lang.String[] { "Id", "Title", "RelYear", "Rating", "Genre", });
+        new java.lang.String[] { "Id", "Title", "RelYear", "Rating", "Genre", "ImageUrl", "Summary", });
     internal_static_MovieSearchRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_MovieSearchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MovieSearchRequest_descriptor,
         new java.lang.String[] { "Genre", });
-    internal_static_SaveMovieRequest_descriptor =
+    internal_static_Empty_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Empty_descriptor,
+        new java.lang.String[] { });
+    internal_static_SaveMovieRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_SaveMovieRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveMovieRequest_descriptor,
-        new java.lang.String[] { "Id", "Title", "RelYear", "Rating", "Genre", });
+        new java.lang.String[] { "Id", "Title", "RelYear", "Rating", "Genre", "ImageUrl", "Summary", });
     internal_static_AllMovieResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_AllMovieResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AllMovieResponse_descriptor,
         new java.lang.String[] { "Movie", });
     internal_static_GetMovieResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_GetMovieResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetMovieResponse_descriptor,
         new java.lang.String[] { "Movie", "Status", "MovieResponse", });
+    internal_static_GetFavResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_GetFavResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetFavResponse_descriptor,
+        new java.lang.String[] { "Favorite", "Status", "MovieResponse", });
+    internal_static_FavoriteDto_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_FavoriteDto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavoriteDto_descriptor,
+        new java.lang.String[] { "Id", "UserId", "MovieId", });
+    internal_static_FavSearchRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_FavSearchRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavSearchRequest_descriptor,
+        new java.lang.String[] { "UserId", });
+    internal_static_AllFavResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_AllFavResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AllFavResponse_descriptor,
+        new java.lang.String[] { "Favori", });
+    internal_static_FavSaveRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_FavSaveRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavSaveRequest_descriptor,
+        new java.lang.String[] { "Id", "UserId", "MovieId", });
+    internal_static_FavDeleteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_FavDeleteRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavDeleteRequest_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_FavMovieDeleteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_FavMovieDeleteRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavMovieDeleteRequest_descriptor,
+        new java.lang.String[] { "UserId", "MovieId", });
+    internal_static_SingleFavSearchRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_SingleFavSearchRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SingleFavSearchRequest_descriptor,
+        new java.lang.String[] { "UserId", "MovieId", });
+    internal_static_CommentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_CommentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CommentResponse_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_Comment_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_Comment_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Comment_descriptor,
+        new java.lang.String[] { "UserId", "MovieId", "Message", "Date", });
+    internal_static_AddCommentRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_AddCommentRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddCommentRequest_descriptor,
+        new java.lang.String[] { "UserId", "MovieId", "Message", "Date", });
+    internal_static_AllCommentResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_AllCommentResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AllCommentResponse_descriptor,
+        new java.lang.String[] { "Comment", });
+    internal_static_GetCommentsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_GetCommentsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetCommentsRequest_descriptor,
+        new java.lang.String[] { "MovieId", });
     com.dk.grpcmovie.common.Common.getDescriptor();
   }
 

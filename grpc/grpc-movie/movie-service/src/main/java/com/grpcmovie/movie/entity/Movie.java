@@ -3,23 +3,31 @@ package com.grpcmovie.movie.entity;
 
 
 public class Movie  {
-
-    public Movie(int id, String title, int rel_year, double rating, String genre) {
-        this.id = id;
-        this.title = title;
-        this.rel_year = rel_year;
-        this.rating = rating;
-        this.genre = genre;
-    }
-
-    public Movie() {
-    }
-
     private int id;
     private String title;
     private int rel_year;
     private double rating;
     private String genre;
+    private String image_url;
+    private String summary;
+
+
+    public Movie(int id, String title, int rel_year, double rating, String genre, String image_url, String summary ){
+        this.id = id;
+        this.title = title;
+        this.rel_year = rel_year;
+        this.rating = rating;
+        this.genre = genre;
+        this.image_url = image_url;
+        this.summary = summary;
+    }
+
+    public Movie() {
+    }
+
+
+
+
 
     public int getId() {
         return id;
@@ -59,6 +67,22 @@ public class Movie  {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
 
